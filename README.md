@@ -40,6 +40,7 @@ python scripts/train_php_supermimic.py \
 ```bash
 python scripts/play_php_supermimic.py \
   --checkpoint logs/php_five_skills/last.pt \
+  --dataset-dir data/php_motion \
   --device cuda:0 --port 8082
 ```
 
