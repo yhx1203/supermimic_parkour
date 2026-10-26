@@ -1,0 +1,29 @@
+SuperMimic Parkour standalone extraction
+
+Derived from Parkour MJLab, Copyright 2026 yhx1203.
+Source project: https://github.com/yhx1203/parkour_mjlab
+Extracted from the supplied local parkour_mjlab source tree.
+Original PHP support code, scripts, and tests retain Apache-2.0 terms;
+see the root LICENSE. Changes: standalone Python package/imports, bundled robot
+asset paths, CLI packaging, data configuration, and migration validation.
+
+SuperMimic reproduction code retains its original MIT notices:
+  supermimic_parkour/LICENSE
+  supermimic_parkour/NOTICE
+  supermimic_parkour/core/LICENSE
+  supermimic_parkour/core/NOTICE
+Copyright (c) 2026 ETH Zurich, Chong Zhang.
+Copyright (c) 2026 Yuxi Liu.
+
+PHP (Perceptive Humanoid Parkour): https://github.com/amazon-far/php_parkour
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+The upstream PHP project is Apache-2.0 licensed. Motion datasets retain their
+own terms and are not included or relicensed by this extraction.
+
+Unitree G1 assets retain their BSD 3-Clause license:
+  supermimic_parkour/assets/g1/LICENSE
+Copyright (c) 2016-2024 HangZhou YuShu TECHNOLOGY CO.,LTD. ("Unitree Robotics")
+All rights reserved.
+
+No source training checkpoints or logs are included. Upstream experiment
+results do not establish the performance of this standalone adaptation.

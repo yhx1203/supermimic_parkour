@@ -1,0 +1,22 @@
+Ported from the revised local /home/s135/unitree/supermimic_mjlab implementation.
+Upstream: https://github.com/CuboiLeo/SuperMimic-Reproduced
+Upstream commit: d9be385b3eeb13a638fb33fb200d3bfd9be9839f
+Copyright (c) 2026 Yuxi Liu; MIT (see LICENSE).
+
+Direct primitives: dynamics.py, state_spec.py, rotations.py, objective.py,
+schedule.py; sampling.py adapts envs/mdp/commands.py return-to-go updates.
+Local changes: imports/formatting; StateSpec becomes an nn.Module with registered
+scale buffers for device/dtype movement and checkpoints; objective.py accepts a
+minimal rollout record supplied by the PHP adapter.
+
+The surrounding networks.py and train.py adapt the revised SiLU/fixed-scale
+policy/critic, learned termination head, normalized autoregressive loss,
+horizon-normalized BPTT, GAE and env-step UTD scheduling to PHP. PHP retains its
+own teacher observations/termination conditions, sphere hands, terrain, bounded
+executed actions, replay boundary masks, and balanced selected-skill resets (five
+step/climb skills by default). Rewards now match the original local SuperMimic
+tracking definition, including clean-action rate penalties; the contact reward
+and learned contact head have been removed from new training. legacy_networks.py
+is only for loading pre-migration v2 policies, under the parent LICENSE.
+Upstream experiment results do not establish performance of this adaptation.
+Motion datasets retain their respective licenses.

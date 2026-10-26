@@ -1,0 +1,13 @@
+Adapted from supermimic_vibed, an unofficial SuperMimic reproduction.
+Original code copyright (c) 2026 ETH Zurich, Chong Zhang; MIT (see LICENSE).
+This port replaces the Isaac Lab backend with mjlab and uses the host G1 MJCF.
+The original training results do not establish the performance of this port.
+LAFAN1 data is separately licensed CC BY-NC-ND 4.0 and is not relicensed here.
+
+PHP adaptation from the local supermimic_mjlab implementation: PHP NPZ skill
+bundles (four step/climb skills by default), sphere-hand G1, physical box terrain, terrain-conditioned dynamics and
+policy, balanced skill sampling. This is an adapted reproduction, not official
+SuperMimic code or a claim of matching its published results.
+
+Revised algorithm migration: see core/NOTICE and core/LICENSE for the additional
+SuperMimic-Reproduced attribution. Legacy v2 networks remain for playback only.

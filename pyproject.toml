@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "supermimic-parkour"
+version = "0.1.0"
+description = "Standalone SuperMimic training for PHP parkour motions on MJLab"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mjlab==1.2.0",
+    "mujoco==3.5.0",
+    "mujoco-warp==3.5.0",
+    "warp-lang==1.12.1",
+    "torch>=2.7",
+    "numpy",
+    "tensorboard",
+]
+
+[project.optional-dependencies]
+viewer = ["viser"]
+test = ["pytest"]
+
+[project.scripts]
+supermimic-train = "supermimic_parkour.launcher:main"
+supermimic-play = "supermimic_parkour.play:main"
+supermimic-evaluate = "supermimic_parkour.evaluate:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["supermimic_parkour", "supermimic_parkour.*"]
+namespaces = false
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.package-data]
+supermimic_parkour = [
+    "LICENSE", "NOTICE", "assets/g1/LICENSE", "assets/g1/xmls/*.xml",
+    "assets/g1/xmls/assets/*.STL", "assets/g1/xmls/assets/*.obj",
+]
+"supermimic_parkour.core" = ["LICENSE", "NOTICE"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
